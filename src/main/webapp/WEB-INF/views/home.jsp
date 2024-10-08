@@ -17,7 +17,7 @@
     </form>
 
     <h3>단축된 URL:</h3>
-    <div id="short-url"></div>
+    <a id="short-url" href="#" target="_blank"></a>
 
     <script>
         document.getElementById('url-input-form').addEventListener('submit', function(event) {
@@ -35,6 +35,7 @@
             .then(response => response.text())
             .then(shortUrl => {
                 document.getElementById('short-url').innerText = "localhost:8080/" + shortUrl;
+                document.getElementById('short-url').href = "http://localhost:8080/" + shortUrl;
             })
             .catch(error => {
                 console.error('Error:', error);
